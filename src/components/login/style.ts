@@ -37,6 +37,7 @@ export const LogInHeaderIn = styled.div`
 
 export const LogInHeaderText = styled.div`
   font-size: 25px;
+  color: ${palette.gray[400]};
 `;
 
 export const LogInText = styled.div`
