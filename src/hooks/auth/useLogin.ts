@@ -1,8 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ACCESS_TOKEN_KEY } from "../../constants/token/token.constant";
-import cookie from "../../lib/cookie";
 
 const useLogin = () => {
   const [loginData, setLoginData] = useState<{
@@ -22,11 +20,11 @@ const useLogin = () => {
 
   const onSubmitLogin = async () => {
     try {
-      const { data } = await axios.post("http://44.209.75.36:8080/users/auth", {
+      const { data } = await axios.post("/users/auth", {
         email: loginData.email,
         password: loginData.password,
       });
-      cookie.setCookie(ACCESS_TOKEN_KEY, data.access_token);
+      localStorage.setItem("access_token", data.access_token);
       navigate("/");
     } catch (error) {}
   };

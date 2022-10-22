@@ -1,7 +1,14 @@
+import HomeCategory from "./HomeCategory";
+import HomePostList from "./HomePostList";
+import { HomeContainer } from "./style";
+
 const Home = () => {
   return (
     <>
-      <div>로그인 성공</div>
+      <HomeContainer>
+        <HomeCategory />
+        <HomePostList />
+      </HomeContainer>
     </>
   );
 };
