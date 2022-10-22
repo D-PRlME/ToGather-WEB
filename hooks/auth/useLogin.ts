@@ -1,6 +1,6 @@
 import axios from "axios";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const useLogin = () => {
   const [loginData, setLoginData] = useState<{
@@ -11,7 +11,7 @@ const useLogin = () => {
     password: "",
   });
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const onChangeLoginData = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = e.target;
@@ -25,7 +25,7 @@ const useLogin = () => {
         password: loginData.password,
       });
       localStorage.setItem("access_token", data.access_token);
-      navigate("/");
+      router.push("/");
     } catch (error) {}
   };
 
