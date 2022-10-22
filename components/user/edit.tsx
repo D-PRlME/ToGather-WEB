@@ -24,7 +24,7 @@ const Edit: NextPage = () => {
       </LogInHeaderText>
 
       <UserImageContainer>
-        <Image alt={""} src={UserProfileImage} />
+        <Image alt={``} src={UserProfileImage} />
         <PrimaryButton as={`label`} htmlFor={``}>
           이미지 변경
         </PrimaryButton>
